@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 const AboutSection = () => {
   return (
@@ -63,10 +63,9 @@ const AboutSection = () => {
                 <p className="text-sm text-gray-600 mt-1">Industry Awards</p>
               </div>
             </div>
-
-            <Button className="mt-8 bg-brand-blue hover:bg-brand-blue-light text-white rounded-full px-8">
+            <InteractiveHoverButton className="mt-8">
               Book A Call
-            </Button>
+            </InteractiveHoverButton>
           </div>
         </div>
       </div>
