@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Dot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-md">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1340] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-brand-blue">
@@ -22,51 +22,50 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="relative text-gray-900 transition-colors group px-2 py-1 rounded-lg"
-              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}
+              className="relative flex items-center justify-center text-center text-gray-900 px-0 py-1 rounded-lg"
+              style={{
+                fontWeight: "500", // Apply font weight 500
+                fontSize: "15px", // Apply font size 15px
+                lineHeight: "100%", // Set line-height to 100%
+                letterSpacing: "0%", // Set letter-spacing to 0%
+                textShadow: "0 0 25px rgba(39, 74, 253, 0.6)", // Darker and more spread text shadow
+              }}
             >
-              Home
+              <span className="text-center">Home</span> <Dot />
             </Link>
+
             <Link
               href="/services"
-              className="relative text-gray-600 hover:text-white transition-colors group px-2 py-1 rounded-lg"
+              className="relative flex items-center justify-center text-center text-gray-600 text-[15px] transition-colors group  rounded-lg"
             >
-              Services
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-all rounded-lg"></span>
+              Services <Dot />
             </Link>
             <Link
               href="/work"
-              className="relative text-gray-600 hover:text-white transition-colors group px-2 py-1 rounded-lg"
+              className="relative flex items-center justify-center text-center text-gray-600 text-[15px]  transition-colors group  rounded-lg"
             >
-              Work
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-all rounded-lg"></span>
+              Work <Dot />
             </Link>
             <Link
               href="/about"
-              className="relative text-gray-600 hover:text-white transition-colors group px-2 py-1 rounded-lg"
+              className="relative flex items-center justify-center text-center text-gray-600  text-[15px] transition-colors group  rounded-lg"
             >
-              About Us
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-all rounded-lg"></span>
+              About Us <Dot />
             </Link>
           </div>
 
-          <Button className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white rounded-full flex items-center space-x-2 px-6 py-2">
-            <span className="text-lg">Contact Us</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </Button>
+          <button className="rounded-full flex items-center">
+            <Image
+              src="/images/pen.png"
+              alt="Phone Icon"
+              width={24}
+              height={24}
+              className="mr-2"
+            />
+            <span className="text-lg bg-gradient-to-r from-[#06197D] to-[#274AFD] text-transparent bg-clip-text font-[DM Sans] font-extrabold text-[22px] leading-[100%] tracking-[0%] text-center align-middle">
+              Contact Us
+            </span>
+          </button>
         </div>
       </div>
     </nav>
