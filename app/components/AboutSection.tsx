@@ -12,17 +12,17 @@ const AboutSection = () => {
       className: "rounded-tl-[2rem] pl-5 pt-5",
     },
     {
-      url: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+      url: "/images/about2.png",
       alt: "Team collaboration",
       className: "rounded-bl-[2rem] pl-4 pb-4",
     },
     {
-      url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      url: "/images/about3.png",
       alt: "Development",
       className: "rounded-tr-[2rem] pr-4 pt-4",
     },
     {
-      url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      url: "/images/about4.png",
       alt: "Development",
       className: "rounded-br-[2rem] pr-4 pb-4",
     },
@@ -123,10 +123,14 @@ function ImageCard({ image }: { image: ImageProps }) {
       className={`relative overflow-hidden rounded-xl cursor-pointer ${image.className}`}
       whileHover={{
         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-        // paddingLeft: "20px",
         backgroundColor: "#274AFF",
-        // paddingTop: "20px",
       }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.6 },
+      }}
+      initial={{ opacity: 0, x: -100 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <motion.div
