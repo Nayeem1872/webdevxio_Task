@@ -25,7 +25,7 @@ const PortfolioCard = ({
       return "Complete brand identity design with cohesive visual elements";
     if (cardTitle === "Mobile Application")
       return "Intuitive mobile app design with user-centered approach";
-    // Fallback description for any other titles
+
     return "Exploring innovative solutions and creative designs for this project.";
   };
 
@@ -54,7 +54,15 @@ const PortfolioCard = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none" />
 
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-        <h3 className="font-bold text-2xl text-white mb-3">{title}</h3>
+        <h3
+          className={cn(
+            "font-bold text-2xl text-white",
+            "-mb-12 group-hover:mb-3", // Default mb-3, changes to -mb-9 on hover
+            "transition-all duration-500 ease-in-out" // Smooth transition for margin change
+          )}
+        >
+          {title}
+        </h3>
 
         <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-100">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-150">
