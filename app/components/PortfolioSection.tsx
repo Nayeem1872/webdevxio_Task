@@ -16,7 +16,6 @@ const PortfolioCard = ({
   isLarge = false,
   tags = [],
 }: PortfolioCardProps) => {
-  // Helper to get description based on title
   const getDescription = (cardTitle: string) => {
     if (cardTitle === "Digital Marketing Website")
       return "Comprehensive digital marketing platform with modern UI/UX design";
@@ -36,35 +35,28 @@ const PortfolioCard = ({
     <div
       className={cn(
         "group cursor-pointer transition-all duration-700 ease-in-out hover:shadow-2xl relative overflow-hidden bg-black rounded-2xl border-0 shadow-lg",
-        "h-[550px]", // Card height
-        isLarge ? "w-68 hover:w-[400px]" : "w-56 hover:w-76" // Width transition
+        "h-[550px]",
+        isLarge ? "w-68 hover:w-[400px]" : "w-56 hover:w-76"
       )}
       style={{
         transition:
           "width 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease",
       }}
     >
-      {/* Background Image: Covers the entire card, zooms on hover */}
       <img
         src={image || "/placeholder.svg"}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
 
-      {/* Persistent Bottom Gradient for always-visible title readability */}
       <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/70 via-black/40 to-transparent pointer-events-none" />
 
-      {/* Gradient Overlay for Hover Content: Appears on hover to enhance text readability at the bottom */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none" />
 
-      {/* Content Container: Positioned at the bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-        {/* Always Visible Title (Styled like the example image) */}
         <h3 className="font-bold text-2xl text-white mb-3">{title}</h3>
 
-        {/* Hover Content Block (Description and Tags) */}
         <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-100">
-          {/* Animated Text Block for description and tags */}
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-150">
             <p className="text-sm text-gray-200 opacity-90 mb-4 line-clamp-3 group-hover:line-clamp-none">
               {description}
@@ -86,7 +78,6 @@ const PortfolioCard = ({
         </div>
       </div>
 
-      {/* Optional Top Right Arrow Icon: For 'isLarge' cards, appears on hover */}
       {isLarge && (
         <div className="absolute top-5 right-5 bg-indigo-600/70 group-hover:bg-indigo-600 p-2.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 transform scale-90 group-hover:scale-100 z-10">
           <svg
@@ -109,11 +100,6 @@ const PortfolioCard = ({
     </div>
   );
 };
-
-// The PortfolioSection component remains the same as you provided.
-// ... (Your PortfolioSection component code) ...
-// Make sure to export PortfolioCard if it's in a separate file and imported by PortfolioSection.
-// If they are in the same file, the existing structure is fine.
 
 const PortfolioSection = () => {
   return (
@@ -171,9 +157,4 @@ const PortfolioSection = () => {
   );
 };
 
-// Assuming Button and Search components are correctly imported elsewhere
-// For example, if this is a single file:
-// import { Button } from "@/components/ui/button"; // Already in your original code
-// import { Search } from "lucide-react"; // Already in your original code
-
-export default PortfolioSection; // Or export PortfolioCard if it's standalone
+export default PortfolioSection;
